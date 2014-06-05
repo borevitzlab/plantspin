@@ -44,7 +44,7 @@ def AttachHandler(event):
     deviceName = attachedDevice.getDeviceName()
     print("Hello to Device " + str(deviceName) + ", Serial Number: " + str(serialNumber))
     attachedDevice = device
-    
+
 #Event Handler Callback Functions
 def interfaceKitAttached(e):
     attached = e.device
@@ -131,7 +131,7 @@ try:
        interfaceKit.setOutputState (7, True)
        interfaceKit.setOutputState (0, True)
        sleep(0.38)
-   
+
        interfaceKit.setOutputState (7, False)
        interfaceKit.setOutputState (0, False)
        sleep(0.38)
@@ -142,7 +142,6 @@ except PhidgetException as e:
 print("Setting the data rate for each sensor index to 16ms....")
 for i in range(interfaceKit.getSensorCount()):
     try:
-        
         interfaceKit.setDataRate(0, 16)
     except PhidgetException as e:
         print("Phidget Exception %i: %s" % (e.code, e.details))
